@@ -20,14 +20,12 @@ export const test = base.extend<MyFixtures>({
   },
 
   authenticatedPage: async ({ page }, use) => {
-    // Auto-login fixture for tests that require authentication
     const loginPage = new LoginPage(page);
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     await loginPage.loginWithValidCredentials();
     await page.waitForURL('**/dashboard/**', { timeout: 15000 });
     await use(page);
     
-    // Cleanup: Logout after test
     try {
       await page.click('.oxd-userdropdown-tab');
       await page.click('a:has-text("Logout")');
