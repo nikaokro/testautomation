@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Automation Finals Practice Quiz</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .quiz-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .question-block {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid #0d6efd;
+            background-color: #f8f9fa;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .selector-hint {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .submit-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+        }
+        h1 {
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+        .section-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 30px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <h1 class="text-center">Test Automation Finals Practice Quiz</h1>
+            <p class="text-center text-muted">Topics: Playwright, Postman, k6.io Performance Testing</p>
+            <hr>
+            
+            <form id="quizForm" data-testid="automation-quiz-form">
+                <!-- Student Information -->
+                <div class="mb-4">
+                    <label for="studentEmail" class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" id="studentEmail" name="email" required 
+                           placeholder="Enter your email">
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use ID selector for this field
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="studentName" class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" name="fullName" id="studentName" required
+                           placeholder="Enter your full name">
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use name attribute selector for this field
+                    </div>
+                </div>
+
+                <!-- Section 1: K6.io Performance Testing -->
+                <div class="section-header">
+                    <h3>Section 1: K6.io Performance Testing (9 points)</h3>
+                </div>
+
+                <!-- Question 1 -->
+                <div class="question-block">
+                    <div class="question-number">Question 1 (1 point)</div>
+                    <label class="form-label">What is k6.io primarily used for? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1_k6_purpose" id="q1_option1" value="frontend" required>
+                        <label class="form-check-label" for="q1_option1">
+                            Frontend unit testing
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1_k6_purpose" id="q1_option2" value="performance">
+                        <label class="form-check-label" for="q1_option2">
+                            Performance and load testing
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1_k6_purpose" id="q1_option3" value="api_docs">
+                        <label class="form-check-label" for="q1_option3">
+                            API documentation generation
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1_k6_purpose" id="q1_option4" value="database">
+                        <label class="form-check-label" for="q1_option4">
+                            Database migration testing
+                        </label>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use name attribute to locate radio button group
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-block">
+                    <div class="question-number">Question 2 (1 point)</div>
+                    <label class="form-label">Which of the following are key features of k6.io? (Select all that apply) *</label>
+                    <div class="form-check">
+                        <input class="form-check-input k6-features" type="checkbox" name="q2_k6_features[]" value="recorder" id="q2_feat1">
+                        <label class="form-check-label" for="q2_feat1">
+                            Built-in browser recorder (k6 Browser Recorder extension)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input k6-features" type="checkbox" name="q2_k6_features[]" value="javascript" id="q2_feat2">
+                        <label class="form-check-label" for="q2_feat2">
+                            JavaScript/TypeScript-based scripting with full IDE support
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input k6-features" type="checkbox" name="q2_k6_features[]" value="mobile" id="q2_feat3">
+                        <label class="form-check-label" for="q2_feat3">
+                            Native mobile app testing capabilities
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input k6-features" type="checkbox" name="q2_k6_features[]" value="datagen" id="q2_feat4">
+                        <label class="form-check-label" for="q2_feat4">
+                            Built-in test data generation
+                        </label>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use class selector "k6-features" to get all checkboxes
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-block">
+                    <div class="question-number">Question 3 (1 point)</div>
+                    <label class="form-label">In k6.io, what is the primary way to define test scenarios? *</label>
+                    <select class="form-select" name="q3_k6_scenarios" id="k6ScenarioSelect" required>
+                        <option value="" selected disabled>Choose an answer...</option>
+                        <option value="xml">XML configuration files</option>
+                        <option value="python">Python scripts</option>
+                        <option value="javascript">JavaScript/TypeScript code</option>
+                        <option value="yaml">YAML files</option>
+                    </select>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use ID selector for this dropdown
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-block">
+                    <div class="question-number">Question 4 (1 point)</div>
+                    <label class="form-label">A company wants to test their e-commerce platform's behavior during Black Friday sales, simulating a sudden surge in user traffic over a 2-hour period. Which type of performance test is most appropriate? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4_test_type" value="endurance" data-test="test-type-radio" required>
+                        <label class="form-check-label">Endurance test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4_test_type" value="spike" data-test="test-type-radio">
+                        <label class="form-check-label">Spike test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4_test_type" value="baseline" data-test="test-type-radio">
+                        <label class="form-check-label">Baseline test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4_test_type" value="scalability" data-test="test-type-radio">
+                        <label class="form-check-label">Scalability test</label>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use data-test attribute selector for these radio buttons
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-block">
+                    <div class="question-number">Question 5 (1 point)</div>
+                    <label class="form-label">Which key metric is NOT typically monitored in k6.io? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5_metrics" value="response_time" required>
+                        <label class="form-check-label">Response time</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5_metrics" value="error_rate">
+                        <label class="form-check-label">Error rate</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5_metrics" value="code_coverage">
+                        <label class="form-check-label">Code coverage</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5_metrics" value="virtual_users">
+                        <label class="form-check-label">Virtual users count</label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-block">
+                    <div class="question-number">Question 6 (1 point)</div>
+                    <label for="k6ThresholdInput" class="form-label">In k6, thresholds are used to define pass/fail criteria. On a scale of 1-10, how important are thresholds for automated CI/CD pipeline integration? *</label>
+                    <input type="range" class="form-range" min="1" max="10" step="1" id="k6ThresholdInput" name="q6_threshold_importance" value="5">
+                    <div class="text-center mt-2">
+                        <strong>Current value: <span id="thresholdValue">5</span></strong>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use ID selector and interact with range slider
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question-block">
+                    <div class="question-number">Question 7 (1 point)</div>
+                    <label class="form-label">An online learning platform needs to verify if their system can handle consistent traffic of 5000 concurrent users for 72 hours straight. Which type of test should they perform? *</label>
+                    <select class="form-select" name="q7_endurance" required>
+                        <option value="" selected disabled>Select test type...</option>
+                        <option value="spike">Spike test</option>
+                        <option value="load">Load test</option>
+                        <option value="endurance">Endurance test</option>
+                        <option value="stress">Stress test</option>
+                    </select>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question-block">
+                    <div class="question-number">Question 8 (1 point)</div>
+                    <label class="form-label">What is a key best practice when conducting performance testing? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8_best_practice" value="production" required>
+                        <label class="form-check-label">Always test in production</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8_best_practice" value="peak_hours">
+                        <label class="form-check-label">Test only during peak business hours</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8_best_practice" value="baseline">
+                        <label class="form-check-label">Establish baseline metrics before complex tests</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8_best_practice" value="real_data">
+                        <label class="form-check-label">Use real user data exclusively</label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="question-block">
+                    <div class="question-number">Question 9 (1 point)</div>
+                    <label class="form-label">A streaming service wants to determine the maximum number of concurrent video streams their infrastructure can handle before degrading. Which test type is most appropriate? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9_streaming_test" value="smoke" required>
+                        <label class="form-check-label">Smoke test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9_streaming_test" value="load">
+                        <label class="form-check-label">Load test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9_streaming_test" value="stress">
+                        <label class="form-check-label">Stress test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9_streaming_test" value="volume">
+                        <label class="form-check-label">Volume test</label>
+                    </div>
+                </div>
+
+                <!-- Section 2: Postman & API Testing -->
+                <div class="section-header">
+                    <h3>Section 2: Postman & API Testing (8 points)</h3>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question-block">
+                    <div class="question-number">Question 10 (1 point)</div>
+                    <label class="form-label">What is the primary purpose of Pre-request Scripts in Postman? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input postman-prerequest" type="radio" name="q10_prerequest" value="after" required>
+                        <label class="form-check-label">Execute code after receiving API response</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input postman-prerequest" type="radio" name="q10_prerequest" value="before">
+                        <label class="form-check-label">Execute code before sending the request</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input postman-prerequest" type="radio" name="q10_prerequest" value="validate">
+                        <label class="form-check-label">Validate response data</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input postman-prerequest" type="radio" name="q10_prerequest" value="document">
+                        <label class="form-check-label">Generate API documentation</label>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use class selector "postman-prerequest" for these options
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="question-block">
+                    <div class="question-number">Question 11 (1 point)</div>
+                    <label class="form-label">Analyze the following Postman Pre-request Script:</label>
+                    <div class="code-block">
+const timestamp = Date.now();
+pm.environment.set("timestamp", timestamp);
+const signature = CryptoJS.HmacSHA256(timestamp.toString(), pm.environment.get("secret_key"));
+pm.environment.set("signature", signature);
+                    </div>
+                    <label class="form-label">What does this script accomplish? *</label>
+                    <select class="form-select" name="q11_script_purpose" id="postmanScriptAnalysis" required>
+                        <option value="" selected disabled>Select the correct answer...</option>
+                        <option value="logging">Logs timestamp for debugging purposes</option>
+                        <option value="auth">Generates timestamp and HMAC signature for authentication</option>
+                        <option value="encryption">Encrypts sensitive data before sending</option>
+                        <option value="validation">Validates environment variables</option>
+                    </select>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use ID selector for this dropdown
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="question-block">
+                    <div class="question-number">Question 12 (1 point)</div>
+                    <label class="form-label">Which of the following can you do with Postman Tests (Post-response Scripts)? (Select all that apply) *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q12_postman_tests[]" value="assert_status" id="postman_test1">
+                        <label class="form-check-label" for="postman_test1">
+                            Assert response status codes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q12_postman_tests[]" value="parse_json" id="postman_test2">
+                        <label class="form-check-label" for="postman_test2">
+                            Parse JSON response and store values in variables
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q12_postman_tests[]" value="modify_request" id="postman_test3">
+                        <label class="form-check-label" for="postman_test3">
+                            Modify the request before it's sent
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q12_postman_tests[]" value="validate_schema" id="postman_test4">
+                        <label class="form-check-label" for="postman_test4">
+                            Validate response against JSON schema
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q12_postman_tests[]" value="chain_requests" id="postman_test5">
+                        <label class="form-check-label" for="postman_test5">
+                            Chain requests by setting the next request
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="question-block">
+                    <div class="question-number">Question 13 (1 point)</div>
+                    <label class="form-label">Examine this Postman Test script:</label>
+                    <div class="code-block">
+pm.test("Response time is acceptable", function () {
+    pm.expect(pm.response.responseTime).to.be.below(500);
+});
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+const jsonData = pm.response.json();
+pm.environment.set("userId", jsonData.id);
+                    </div>
+                    <label class="form-label">What will happen if the response time is 600ms? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q13_test_behavior" value="all_pass" required>
+                        <label class="form-check-label">All tests will pass</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q13_test_behavior" value="first_fail">
+                        <label class="form-check-label">First test fails, remaining tests are not executed</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q13_test_behavior" value="first_fail_continue">
+                        <label class="form-check-label">First test fails, but other tests continue to execute</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q13_test_behavior" value="all_fail">
+                        <label class="form-check-label">All tests will fail</label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="question-block">
+                    <div class="question-number">Question 14 (1 point)</div>
+                    <label class="form-label">Which Postman object allows you to access environment variables in scripts? *</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="q14_pm_object" id="pm_env" value="pm.environment" required>
+                            <label class="form-check-label" for="pm_env">pm.environment</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="q14_pm_object" id="pm_vars" value="pm.variables">
+                            <label class="form-check-label" for="pm_vars">pm.variables</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="q14_pm_object" id="pm_globals" value="pm.globals">
+                            <label class="form-check-label" for="pm_globals">pm.globals</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="q14_pm_object" id="pm_all" value="all_above">
+                            <label class="form-check-label" for="pm_all">All of the above</label>
+                        </div>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use individual ID selectors for inline radio buttons
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="question-block">
+                    <div class="question-number">Question 15 (1 point)</div>
+                    <label for="postmanVarsInput" class="form-label">In Postman, variables can have different scopes. Arrange them from highest to lowest precedence by entering numbers 1-5 (1=highest priority): *</label>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label class="form-label small">Local variables:</label>
+                            <input type="number" class="form-control" name="q15_local" min="1" max="5" required placeholder="1-5">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small">Data variables:</label>
+                            <input type="number" class="form-control" name="q15_data" min="1" max="5" required placeholder="1-5">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small">Environment variables:</label>
+                            <input type="number" class="form-control" name="q15_environment" min="1" max="5" required placeholder="1-5">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small">Collection variables:</label>
+                            <input type="number" class="form-control" name="q15_collection" min="1" max="5" required placeholder="1-5">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small">Global variables:</label>
+                            <input type="number" class="form-control" name="q15_global" min="1" max="5" required placeholder="1-5">
+                        </div>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use name attributes to fill these number inputs
+                    </div>
+                </div>
+
+                <!-- Question 16 -->
+                <div class="question-block">
+                    <div class="question-number">Question 16 (1 point)</div>
+                    <label class="form-label">In Postman Collections, you can run requests in a specific order using the Collection Runner. Rate the importance of this feature for API testing workflows (1-10): *</label>
+                    <input type="range" class="form-range" min="1" max="10" step="1" id="collectionRunnerImportance" name="q16_runner_importance" value="5">
+                    <div class="text-center mt-2">
+                        <strong>Rating: <span id="runnerValue">5</span></strong>
+                    </div>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="question-block">
+                    <div class="question-number">Question 17 (1 point)</div>
+                    <label for="q17_newman" class="form-label">What is Newman in the context of Postman? *</label>
+                    <textarea class="form-control" id="q17_newman" name="q17_newman" rows="3" required 
+                              placeholder="Write your answer here (minimum 20 characters)" minlength="20"></textarea>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use ID selector for textarea and check character count
+                    </div>
+                </div>
+
+                <!-- Section 3: Playwright Automation -->
+                <div class="section-header">
+                    <h3>Section 3: Playwright Automation (6 points)</h3>
+                </div>
+
+                <!-- Question 18 -->
+                <div class="question-block">
+                    <div class="question-number">Question 18 (1 point)</div>
+                    <label class="form-label">Which of the following are benefits of using Playwright over Selenium? (Select all that apply) *</label>
+                    <div class="form-check">
+                        <input class="form-check-input playwright-benefits" type="checkbox" name="q18_playwright[]" value="auto_wait" id="pw_benefit1">
+                        <label class="form-check-label" for="pw_benefit1">
+                            Auto-waiting for elements
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input playwright-benefits" type="checkbox" name="q18_playwright[]" value="multi_browser" id="pw_benefit2">
+                        <label class="form-check-label" for="pw_benefit2">
+                            Native support for multiple browsers (Chromium, Firefox, WebKit)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input playwright-benefits" type="checkbox" name="q18_playwright[]" value="network" id="pw_benefit3">
+                        <label class="form-check-label" for="pw_benefit3">
+                            Network interception and mocking
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input playwright-benefits" type="checkbox" name="q18_playwright[]" value="java_only" id="pw_benefit4">
+                        <label class="form-check-label" for="pw_benefit4">
+                            Exclusively supports Java programming language
+                        </label>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use class selector "playwright-benefits"
+                    </div>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="question-block">
+                    <div class="question-number">Question 19 (1 point)</div>
+                    <label class="form-label">Analyze this Playwright code:</label>
+                    <div class="code-block">
+await page.locator('[data-testid="submit-button"]').click();
+await page.waitForSelector('.success-message', { state: 'visible' });
+const message = await page.locator('.success-message').textContent();
+expect(message).toContain('Success');
+                    </div>
+                    <label class="form-label">What selector strategy is used to locate the submit button? *</label>
+                    <select class="form-select" name="q19_selector_type" data-automation="selector-dropdown" required>
+                        <option value="" selected disabled>Choose selector type...</option>
+                        <option value="id">ID selector</option>
+                        <option value="data_testid">Data-testid attribute selector</option>
+                        <option value="class">Class selector</option>
+                        <option value="xpath">XPath selector</option>
+                    </select>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use data-automation attribute selector
+                    </div>
+                </div>
+
+                <!-- Question 20 -->
+                <div class="question-block">
+                    <div class="question-number">Question 20 (1 point)</div>
+                    <label class="form-label">In Playwright, which of these actions are performed with auto-waiting? (Select all that apply) *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q20_auto_wait[]" value="click">
+                        <label class="form-check-label">click()</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q20_auto_wait[]" value="fill">
+                        <label class="form-check-label">fill()</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q20_auto_wait[]" value="getAttribute">
+                        <label class="form-check-label">getAttribute()</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="q20_auto_wait[]" value="textContent">
+                        <label class="form-check-label">textContent()</label>
+                    </div>
+                </div>
+
+                <!-- Question 21 -->
+                <div class="question-block">
+                    <div class="question-number">Question 21 (1 point)</div>
+                    <label class="form-label">What is the purpose of Page Object Model (POM) in test automation? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q21_pom" value="performance" required>
+                        <label class="form-check-label">Improve test execution performance</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q21_pom" value="maintainability">
+                        <label class="form-check-label">Improve test maintainability and reduce code duplication</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q21_pom" value="security">
+                        <label class="form-check-label">Enhance test security</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q21_pom" value="parallel">
+                        <label class="form-check-label">Enable parallel test execution</label>
+                    </div>
+                </div>
+
+                <!-- Question 22 -->
+                <div class="question-block">
+                    <div class="question-number">Question 22 (1 point)</div>
+                    <label class="form-label">Examine this Playwright test structure:</label>
+                    <div class="code-block">
+test.describe('Login Tests', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://example.com/login');
+  });
+
+  test('successful login', async ({ page }) => {
+    // test code
+  });
+
+  test('failed login', async ({ page }) => {
+    // test code
+  });
+});
+                    </div>
+                    <label class="form-label">What will happen before each test in this suite? *</label>
+                    <select class="form-select" name="q22_hooks" required>
+                        <option value="" selected disabled>Select answer...</option>
+                        <option value="once">Navigate to login page once before all tests</option>
+                        <option value="each">Navigate to login page before each individual test</option>
+                        <option value="none">No navigation occurs automatically</option>
+                        <option value="after">Navigate after each test completes</option>
+                    </select>
+                </div>
+
+                <!-- Question 23 -->
+                <div class="question-block">
+                    <div class="question-number">Question 23 (1 point)</div>
+                    <label for="playwrightFeedback" class="form-label">Based on your experience with Playwright, describe one challenge you faced and how you resolved it: *</label>
+                    <textarea class="form-control" id="playwrightFeedback" name="q23_experience" rows="4" required 
+                              placeholder="Minimum 50 characters required" minlength="50"></textarea>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Use ID selector and verify minimum character count
+                    </div>
+                </div>
+
+                <!-- Section 4: General Test Automation -->
+                <div class="section-header">
+                    <h3>Section 4: General Test Automation Concepts (2 points)</h3>
+                </div>
+
+                <!-- Question 24 -->
+                <div class="question-block">
+                    <div class="question-number">Question 24 (1 point)</div>
+                    <label class="form-label">Which testing pyramid level should have the most tests? *</label>
+                    <div class="btn-group" role="group" aria-label="Test pyramid levels">
+                        <input type="radio" class="btn-check" name="q24_pyramid" id="pyramid_unit" value="unit" autocomplete="off" required>
+                        <label class="btn btn-outline-primary" for="pyramid_unit">Unit Tests</label>
+
+                        <input type="radio" class="btn-check" name="q24_pyramid" id="pyramid_integration" value="integration" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="pyramid_integration">Integration Tests</label>
+
+                        <input type="radio" class="btn-check" name="q24_pyramid" id="pyramid_e2e" value="e2e" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="pyramid_e2e">E2E Tests</label>
+
+                        <input type="radio" class="btn-check" name="q24_pyramid" id="pyramid_manual" value="manual" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="pyramid_manual">Manual Tests</label>
+                    </div>
+                    <div class="selector-hint mt-3">
+                        🎯 Automation Hint: Use ID selectors for button group radio inputs
+                    </div>
+                </div>
+
+                <!-- Question 25 -->
+                <div class="question-block">
+                    <div class="question-number">Question 25 (1 point)</div>
+                    <label class="form-label">Rate your overall confidence in test automation fundamentals (1-10): *</label>
+                    <input type="range" class="form-range" min="1" max="10" step="1" id="confidenceLevel" name="q25_confidence" value="5">
+                    <div class="text-center mt-2">
+                        <strong>Confidence level: <span id="confidenceValue">5</span></strong>
+                    </div>
+                    <div class="selector-hint">
+                        🎯 Automation Hint: Verify slider value matches expected range
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="honestWorkCheckbox" name="honest_work" required>
+                        <label class="form-check-label" for="honestWorkCheckbox">
+                            I confirm that this is my own work and I have completed it honestly. *
+                        </label>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitQuizButton">
+                            Submit Quiz
+                        </button>
+                        <button type="reset" class="btn btn-secondary" id="resetQuizButton">
+                            Reset Form
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Results Section (Hidden by default) -->
+            <div id="resultsSection" class="mt-4" style="display: none;">
+                <div class="alert" role="alert" id="scoreAlert">
+                    <h4 class="alert-heading">Quiz Results</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="display-4" id="finalScore">0/25</h2>
+                            <p class="lead" id="percentage">0%</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="gradeDisplay" class="text-end">
+                                <h3 id="letterGrade">-</h3>
+                                <p id="gradeMessage">-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="sectionBreakdown" class="mt-3">
+                        <h5>Section Breakdown:</h5>
+                        <ul id="sectionScores"></ul>
+                    </div>
+                    <div id="detailedResults" class="mt-4">
+                        <h5>Detailed Results:</h5>
+                        <div id="resultsDetails"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Answer Key
+        const correctAnswers = {
+            // Section 1: K6.io (9 points)
+            q1_k6_purpose: 'performance',
+            q2_k6_features: ['recorder', 'javascript'],
+            q3_k6_scenarios: 'javascript',
+            q4_test_type: 'spike',
+            q5_metrics: 'code_coverage',
+            q6_threshold_importance: [7, 8, 9, 10], // Range of acceptable answers
+            q7_endurance: 'endurance',
+            q8_best_practice: 'baseline',
+            q9_streaming_test: 'stress',
+            
+            // Section 2: Postman (8 points)
+            q10_prerequest: 'before',
+            q11_script_purpose: 'auth',
+            q12_postman_tests: ['assert_status', 'parse_json', 'validate_schema', 'chain_requests'],
+            q13_test_behavior: 'first_fail_continue',
+            q14_pm_object: 'all_above',
+            q15_variable_precedence: {
+                q15_local: '1',
+                q15_data: '2',
+                q15_environment: '3',
+                q15_collection: '4',
+                q15_global: '5'
+            },
+            q16_runner_importance: [6, 7, 8, 9, 10], // Range of acceptable answers
+            q17_newman: 'newman', // Partial match - must contain 'newman' and 'command line' or 'cli'
+            
+            // Section 3: Playwright (6 points)
+            q18_playwright: ['auto_wait', 'multi_browser', 'network'],
+            q19_selector_type: 'data_testid',
+            q20_auto_wait: ['click', 'fill'],
+            q21_pom: 'maintainability',
+            q22_hooks: 'each',
+            q23_experience: 'open', // Open answer - just check length
+            
+            // Section 4: General (2 points)
+            q24_pyramid: 'unit',
+            q25_confidence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // Any answer is acceptable
+        };
+
+        // Question details for feedback
+        const questionDetails = {
+            q1_k6_purpose: { section: 'K6.io', points: 1, question: 'What is k6.io primarily used for?', correctAnswer: 'Performance and load testing' },
+            q2_k6_features: { section: 'K6.io', points: 1, question: 'Key features of k6.io', correctAnswer: 'Browser recorder and JavaScript/TypeScript scripting' },
+            q3_k6_scenarios: { section: 'K6.io', points: 1, question: 'Primary way to define test scenarios', correctAnswer: 'JavaScript/TypeScript code' },
+            q4_test_type: { section: 'K6.io', points: 1, question: 'Black Friday traffic surge test type', correctAnswer: 'Spike test' },
+            q5_metrics: { section: 'K6.io', points: 1, question: 'Metric NOT monitored in k6.io', correctAnswer: 'Code coverage' },
+            q6_threshold_importance: { section: 'K6.io', points: 1, question: 'Threshold importance for CI/CD', correctAnswer: '7-10 (High importance)' },
+            q7_endurance: { section: 'K6.io', points: 1, question: '72-hour consistent traffic test', correctAnswer: 'Endurance test' },
+            q8_best_practice: { section: 'K6.io', points: 1, question: 'Performance testing best practice', correctAnswer: 'Establish baseline metrics before complex tests' },
+            q9_streaming_test: { section: 'K6.io', points: 1, question: 'Maximum concurrent streams test', correctAnswer: 'Stress test' },
+            
+            q10_prerequest: { section: 'Postman', points: 1, question: 'Purpose of Pre-request Scripts', correctAnswer: 'Execute code before sending the request' },
+            q11_script_purpose: { section: 'Postman', points: 1, question: 'Script analysis - timestamp and signature', correctAnswer: 'Generates timestamp and HMAC signature for authentication' },
+            q12_postman_tests: { section: 'Postman', points: 1, question: 'Post-response script capabilities', correctAnswer: 'Assert status, parse JSON, validate schema, chain requests' },
+            q13_test_behavior: { section: 'Postman', points: 1, question: 'Test behavior when response time exceeds threshold', correctAnswer: 'First test fails, but other tests continue' },
+            q14_pm_object: { section: 'Postman', points: 1, question: 'Postman objects for accessing variables', correctAnswer: 'All of the above (pm.environment, pm.variables, pm.globals)' },
+            q15_variable_precedence: { section: 'Postman', points: 1, question: 'Variable scope precedence order', correctAnswer: 'Local(1), Data(2), Environment(3), Collection(4), Global(5)' },
+            q16_runner_importance: { section: 'Postman', points: 1, question: 'Collection Runner importance rating', correctAnswer: '6-10 (Important feature)' },
+            q17_newman: { section: 'Postman', points: 1, question: 'What is Newman?', correctAnswer: 'Command-line tool for running Postman collections' },
+            
+            q18_playwright: { section: 'Playwright', points: 1, question: 'Benefits of Playwright over Selenium', correctAnswer: 'Auto-waiting, multi-browser support, network interception' },
+            q19_selector_type: { section: 'Playwright', points: 1, question: 'Selector strategy analysis', correctAnswer: 'Data-testid attribute selector' },
+            q20_auto_wait: { section: 'Playwright', points: 1, question: 'Actions with auto-waiting', correctAnswer: 'click() and fill()' },
+            q21_pom: { section: 'Playwright', points: 1, question: 'Purpose of Page Object Model', correctAnswer: 'Improve test maintainability and reduce code duplication' },
+            q22_hooks: { section: 'Playwright', points: 1, question: 'beforeEach hook behavior', correctAnswer: 'Navigate to login page before each individual test' },
+            q23_experience: { section: 'Playwright', points: 1, question: 'Playwright experience description', correctAnswer: 'Written response (50+ characters)' },
+            
+            q24_pyramid: { section: 'General', points: 1, question: 'Testing pyramid - most tests level', correctAnswer: 'Unit Tests' },
+            q25_confidence: { section: 'General', points: 1, question: 'Confidence level rating', correctAnswer: 'Any rating (self-assessment)' }
+        };
+
+        // Scoring function
+        function gradeQuiz(formData) {
+            let totalScore = 0;
+            let maxScore = 25;
+            const results = [];
+            const sectionScores = {
+                'K6.io': { earned: 0, total: 9 },
+                'Postman': { earned: 0, total: 8 },
+                'Playwright': { earned: 0, total: 6 },
+                'General': { earned: 0, total: 2 }
+            };
+
+            // Grade each question
+            for (let key in questionDetails) {
+                const detail = questionDetails[key];
+                const userAnswer = formData[key];
+                const correctAnswer = correctAnswers[key];
+                let isCorrect = false;
+                let feedback = '';
+
+                // Special handling for different question types
+                if (key === 'q15_variable_precedence') {
+                    // Check variable precedence order
+                    isCorrect = 
+                        formData['q15_local'] === '1' &&
+                        formData['q15_data'] === '2' &&
+                        formData['q15_environment'] === '3' &&
+                        formData['q15_collection'] === '4' &&
+                        formData['q15_global'] === '5';
+                } else if (key === 'q17_newman') {
+                    // Text answer - check if contains key terms
+                    const answer = (userAnswer || '').toLowerCase();
+                    isCorrect = (answer.includes('newman') || answer.includes('command')) && 
+                                (answer.includes('line') || answer.includes('cli') || answer.includes('run'));
+                    feedback = isCorrect ? 'Good explanation!' : 'Should mention Newman as a command-line tool for running Postman collections';
+                } else if (key === 'q23_experience') {
+                    // Open answer - just check length
+                    isCorrect = userAnswer && userAnswer.length >= 50;
+                    feedback = isCorrect ? 'Valid response provided' : 'Response too short (minimum 50 characters)';
+                } else if (Array.isArray(correctAnswer)) {
+                    if (typeof correctAnswer[0] === 'number') {
+                        // Range answer (slider questions)
+                        const numAnswer = parseInt(userAnswer);
+                        isCorrect = correctAnswer.includes(numAnswer);
+                    } else {
+                        // Multiple choice (checkboxes)
+                        const userAnswerArray = Array.isArray(userAnswer) ? userAnswer : [userAnswer];
+                        isCorrect = correctAnswer.length === userAnswerArray.length &&
+                                  correctAnswer.every(val => userAnswerArray.includes(val));
+                    }
+                } else {
+                    // Single answer
+                    isCorrect = userAnswer === correctAnswer;
+                }
+
+                if (isCorrect) {
+                    totalScore += detail.points;
+                    sectionScores[detail.section].earned += detail.points;
+                }
+
+                results.push({
+                    question: detail.question,
+                    section: detail.section,
+                    correct: isCorrect,
+                    userAnswer: formatUserAnswer(userAnswer, key),
+                    correctAnswer: detail.correctAnswer,
+                    feedback: feedback
+                });
+            }
+
+            return { totalScore, maxScore, results, sectionScores };
+        }
+
+        function formatUserAnswer(answer, key) {
+            if (!answer) return 'No answer';
+            if (Array.isArray(answer)) return answer.join(', ');
+            if (key.includes('q15_')) return answer; // Variable precedence numbers
+            if (typeof answer === 'string' && answer.length > 50) return answer.substring(0, 47) + '...';
+            return answer;
+        }
+
+        function getLetterGrade(percentage) {
+            if (percentage >= 90) return { grade: 'A', message: 'Excellent work!', class: 'success' };
+            if (percentage >= 80) return { grade: 'B', message: 'Good job!', class: 'info' };
+            if (percentage >= 70) return { grade: 'C', message: 'Satisfactory', class: 'warning' };
+            if (percentage >= 60) return { grade: 'D', message: 'Needs improvement', class: 'warning' };
+            return { grade: 'F', message: 'Please review the material', class: 'danger' };
+        }
+
+        function displayResults(gradingResult) {
+            const { totalScore, maxScore, results, sectionScores } = gradingResult;
+            const percentage = Math.round((totalScore / maxScore) * 100);
+            const gradeInfo = getLetterGrade(percentage);
+
+            // Update score display
+            $('#finalScore').text(`${totalScore}/${maxScore}`);
+            $('#percentage').text(`${percentage}%`);
+            $('#letterGrade').text(`Grade: ${gradeInfo.grade}`);
+            $('#gradeMessage').text(gradeInfo.message);
+            $('#scoreAlert').removeClass('alert-success alert-info alert-warning alert-danger')
+                           .addClass(`alert-${gradeInfo.class}`);
+
+            // Display section breakdown
+            let sectionHTML = '';
+            for (let section in sectionScores) {
+                const score = sectionScores[section];
+                const sectionPercentage = Math.round((score.earned / score.total) * 100);
+                sectionHTML += `<li><strong>${section}:</strong> ${score.earned}/${score.total} (${sectionPercentage}%)</li>`;
+            }
+            $('#sectionScores').html(sectionHTML);
+
+            // Display detailed results
+            let detailsHTML = '<div class="accordion" id="resultsAccordion">';
+            results.forEach((result, index) => {
+                const iconClass = result.correct ? 'text-success' : 'text-danger';
+                const icon = result.correct ? '✓' : '✗';
+                const bgClass = result.correct ? 'bg-success bg-opacity-10' : 'bg-danger bg-opacity-10';
+                
+                detailsHTML += `
+                    <div class="accordion-item ${bgClass}">
+                        <h2 class="accordion-header" id="heading${index}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse${index}" aria-expanded="false">
+                                <span class="${iconClass} me-2"><strong>${icon}</strong></span>
+                                ${result.section} - ${result.question}
+                            </button>
+                        </h2>
+                        <div id="collapse${index}" class="accordion-collapse collapse" 
+                             aria-labelledby="heading${index}" data-bs-parent="#resultsAccordion">
+                            <div class="accordion-body">
+                                <p><strong>Your answer:</strong> ${result.userAnswer}</p>
+                                ${!result.correct ? `<p><strong>Correct answer:</strong> ${result.correctAnswer}</p>` : ''}
+                                ${result.feedback ? `<p class="text-muted"><em>${result.feedback}</em></p>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            detailsHTML += '</div>';
+            $('#resultsDetails').html(detailsHTML);
+        }
+
+        // jQuery for interactive elements
+        $(document).ready(function() {
+            // Update slider values in real-time
+            $('#k6ThresholdInput').on('input', function() {
+                $('#thresholdValue').text($(this).val());
+            });
+
+            $('#collectionRunnerImportance').on('input', function() {
+                $('#runnerValue').text($(this).val());
+            });
+
+            $('#confidenceLevel').on('input', function() {
+                $('#confidenceValue').text($(this).val());
+            });
+
+            // Form submission handler
+            $('#quizForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Collect all form data
+                const formData = {};
+                const formArray = $(this).serializeArray();
+                
+                formArray.forEach(function(item) {
+                    if (item.name.includes('[]')) {
+                        // Handle checkbox arrays
+                        const cleanName = item.name.replace('[]', '');
+                        if (!formData[cleanName]) {
+                            formData[cleanName] = [];
+                        }
+                        formData[cleanName].push(item.value);
+                    } else if (formData[item.name]) {
+                        // If the key already exists, convert to array
+                        if (!Array.isArray(formData[item.name])) {
+                            formData[item.name] = [formData[item.name]];
+                        }
+                        formData[item.name].push(item.value);
+                    } else {
+                        formData[item.name] = item.value;
+                    }
+                });
+
+                // Log to console for automation verification
+                console.log('=== QUIZ SUBMISSION DATA ===');
+                console.log(JSON.stringify(formData, null, 2));
+
+                // Grade the quiz
+                const gradingResult = gradeQuiz(formData);
+                console.log('=== GRADING RESULTS ===');
+                console.log(`Score: ${gradingResult.totalScore}/${gradingResult.maxScore}`);
+                console.log('Section Breakdown:', gradingResult.sectionScores);
+                console.log('============================');
+
+                // Display results
+                displayResults(gradingResult);
+
+                // Show success message
+                $('#resultsSection').slideDown();
+                
+                // Scroll to results
+                $('html, body').animate({
+                    scrollTop: $('#resultsSection').offset().top - 100
+                }, 500);
+            });
+
+            // Reset button handler
+            $('#resetQuizButton').on('click', function() {
+                $('#resultsSection').slideUp();
+                // Reset slider displays
+                $('#thresholdValue').text('5');
+                $('#runnerValue').text('5');
+                $('#confidenceValue').text('5');
+                // Clear results
+                $('#resultsDetails').html('');
+                $('#sectionScores').html('');
+            });
+
+            // Character counter for textareas
+            $('textarea[minlength]').on('input', function() {
+                const minLength = $(this).attr('minlength');
+                const currentLength = $(this).val().length;
+                const remaining = minLength - currentLength;
+                
+                // Could add visual feedback here
+                if (remaining > 0) {
+                    $(this).addClass('is-invalid');
+                } else {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                }
+            });
+
+            // Highlight required fields on focus
+            $('input[required], select[required], textarea[required]').on('focus', function() {
+                $(this).parent().addClass('border-primary');
+            }).on('blur', function() {
+                $(this).parent().removeClass('border-primary');
+            });
+        });
+    </script>
+</body>
+</html>
